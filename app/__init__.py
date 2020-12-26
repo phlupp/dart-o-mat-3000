@@ -20,6 +20,8 @@ PORT = app.config["PORT"]
 RECOGNITION = app.config["RECOGNITION"]
 SOUND = app.config["SOUND"]
 SSL = app.config["SSL"]
+WLANSSID = app.config["WLANSSID"]
+WLANPASSWD = app.config["WLANPASSWD"]
 
 # Define SocketIO
 socketio = SocketIO(app)
