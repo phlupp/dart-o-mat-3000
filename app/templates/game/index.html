@@ -28,7 +28,7 @@
 			<h2>{% trans %}Connect to the WLAN:{% endtrans %}
 			<div id="wlanqr" class="container qrcode">
 				<script type="text/javascript">
-					new QRCode(document.getElementById("wlanqr"), "WIFI:S:{{ wlanssid }};T:WPA;P:{{ wlanpasswd }};;");
+					new QRCode(document.getElementById("wlanqr"), "{{ wlanqr }}");
 				</script>
 			</div>
 		</div>
