@@ -2,7 +2,7 @@
 import random
 
 # Import the database and socketio object from the main app module
-from app import db, socketio, IPADDR, PORT, RECOGNITION, SOUND, SSL
+from app import db, socketio, IPADDR, PORT, RECOGNITION, SOUND, SSL, WLANSSID, WLANPASSWD
 
 # Import flask dependencies
 from flask import Blueprint, request, render_template
@@ -83,7 +83,9 @@ def index():
     else:
         url = "http://{}:{}/game/admin".format(IPADDR,PORT)
 
-    return render_template('/game/index.html', url=url)
+    wlanqr = "WIFI:S:{};T:WPA;P:{};;".format(WLANSSID,WLANPASSWD)
+        
+    return render_template('/game/index.html', url=url, wlanqr=wlanqr)
 
 
 @mod_game.route("/admin/")
