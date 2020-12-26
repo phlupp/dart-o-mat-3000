@@ -11,6 +11,10 @@ socket.on("connect", () => {
      console.log(socket.id);
 });
 
-socket.on("redirectIndex", function(url) {
+//socket.on("redirectIndex", function(url) {
+//	window.location.href = url;
+//});
+
+socket.on("redirectIndex", (url) => {
 	window.location.href = url;
 });
