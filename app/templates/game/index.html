@@ -9,7 +9,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-1"></div>
-		<div class="col-10">
+		<div class="col-5">
 			<h2>{% trans %}Setup a new game like so:{% endtrans %}</h2>
 			<ul>
 				<li>{% trans %}Connect to the local wifi{% endtrans %}</li>
@@ -21,6 +21,14 @@
 			<div id="qrcode" class="container qrcode">
 				<script type="text/javascript">
 					new QRCode(document.getElementById("qrcode"), "{{ url }}");
+				</script>
+			</div>
+		</div>
+		<div class="col-5">
+			<h2>{% trans %}Connect to the WLAN:{% endtrans %}
+			<div id="wlanqr" class="container qrcode">
+				<script type="text/javascript">
+					new QRCode(document.getElementById("wlanqr"), "WIFI:S:Millennium Falke;T:WPA;P:DF!BiPwg!;;");
 				</script>
 			</div>
 		</div>
