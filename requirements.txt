@@ -1,6 +1,5 @@
 flask
-flask-socketio==4.2.1
-python-engineio==3.13.0
+flask-socketio
 flask-sqlalchemy
 flask-babel
 eventlet
