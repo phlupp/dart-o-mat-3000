@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io('http://' + document.domain + ':' + location.port);
 
 //var socket = io.connect('http://' + document.domain + ':' + location.port);
 
