@@ -1,10 +1,9 @@
-var socket = io.connect('http://' + document.domain + ':' + location.port);
-
-socket.on('connect', function () {
-    console.log('Websocket connected!');
+socket.on("connect", () => {
+     console.log('Websocket connected!');
+     console.log(socket.id);
 });
 
-socket.on('redirectAdmin', function (url) {
+socket.on('redirectAdmin', (url) => {
     window.location.href = url;
 });
 
