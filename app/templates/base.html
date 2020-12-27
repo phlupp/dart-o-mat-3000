@@ -20,8 +20,8 @@
     <!--<script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>-->
     <script src="/socket.io/socket.io.min.js"></script>
     <script>
-        //const socket = io('http://' + document.domain + ':' + location.port);
-	const socket = io();
+        const socket = io('http://' + document.domain + ':' + location.port);
+	//const socket = io();
     </script>
     {% block head %}
     {% endblock %}
