@@ -1,41 +1,41 @@
-var socket = io.connect('http://' + document.domain + ':' + location.port);
-
-socket.on('connect', function() {
+socket.on("connect", () => {
+     console.log('Websocket connected!');
+     console.log(socket.id);
 });
 
-socket.on('redirectGameController', function(url) {
+socket.on('redirectGameController', (url) => {
 	window.location.href = url;
 });
 
-socket.on('drawX01Controller', function() {
+socket.on('drawX01Controller', () => {
 	drawX01Controller();
 });
 
-socket.on('drawCricketController', function() {
+socket.on('drawCricketController', () => {
 	drawCricketController();
 });
 
-socket.on('drawThrows', function(playerlist, throwlist) {
+socket.on('drawThrows', (playerlist, throwlist) => {
 	drawThrows(playerlist, throwlist);
 });
 
-socket.on('rematchButton', function() {
+socket.on('rematchButton', () => {
 	rematchButton();
 });
 
-socket.on('highlightAndScore', function(activePlayer, scorelist) {
+socket.on('highlightAndScore', (activePlayer, scorelist) => {
 	highlightAndScore(activePlayer, scorelist);
 });
 
-socket.on('highlightCricket', function(activePlayer) {
+socket.on('highlightCricket', (activePlayer) => {
 	highlightAndScore(activePlayer);
 });
 
-socket.on('drawATC', function (number, single, miss) {
+socket.on('drawATC', (number, single, miss) => {
 	drawATC(number, single, miss);
 });
 
-socket.on('highlightATC', function (player_number_list, activePlayer) {
+socket.on('highlightATC', (player_number_list, activePlayer) => {
 	highlightATC(player_number_list, activePlayer);
 });
 
