@@ -14,8 +14,10 @@
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <!--<script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>-->
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>
+    <script>
+        const socket = io('http://' + document.domain + ':' + location.port);
+    </script>
     {% block head %}
     {% endblock %}
 </head>
