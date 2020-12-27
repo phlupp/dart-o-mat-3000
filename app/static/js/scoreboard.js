@@ -1,79 +1,77 @@
-// Socket IO Settings and events
-var socket = io.connect('http://' + document.domain + ':' + location.port);
-
-socket.on('connect', function() {
-    console.log('Websocket connected!');
+socket.on("connect", () => {
+     console.log('Websocket connected!');
+     console.log(socket.id);
 });
 
-socket.on('refresh', function() {
+socket.on('refresh', () => {
     window.location.reload(1);
 });
 
-socket.on('playSound', function(soundfile) {
+socket.on('playSound', (soundfile) => {
     playSound(soundfile);
 });
 
-socket.on('drawScoreboardSplit', function(playerlist, lastthrows) {
+socket.on('drawScoreboardSplit', (playerlist, lastthrows) => {
     drawScoreboardSplit(playerlist, lastthrows);
 });
 
-socket.on('drawScoreboardATC', function(playerlist) {
+socket.on('drawScoreboardATC', (playerlist) => {
     drawScoreboardATC(playerlist);
 });
 
-socket.on('drawScoreboardX01', function(list, lastthrowsall, throwsum) {
+socket.on('drawScoreboardX01', (list, lastthrowsall, throwsum) => {
     drawScoreboardX01(list, lastthrowsall, throwsum);
 });
 
-socket.on('drawScoreboardCricket', function(cricketlist, lastthrows, closed) {
+socket.on('drawScoreboardCricket', (cricketlist, lastthrows, closed) => {
     drawScoreboardCricket(cricketlist, lastthrows, closed);
 });
 
-socket.on('highlightActiveCricket', function(player, playerID, round, message, throwcount) {
+socket.on('highlightActiveCricket', (player, playerID, round, message, throwcount) => {
     highlightActiveCricket(player, playerID, round, message, throwcount);
 });
 
-socket.on('highlightActive', function(player, playerID, round, message, average, throwcount) {
+socket.on('highlightActive', (player, playerID, round, message, average, throwcount) => {
     highlightActivePlayer(player, playerID, round, message, average, throwcount);
 });
 
-socket.on('highlightATC', function(activePlayer, rnd, throwcount, message) {
+socket.on('highlightATC', (activePlayer, rnd, throwcount, message) => {
     highlightATC(activePlayer, rnd, throwcount, message);
 });
 
-socket.on('highlightSplit', function(activePlayer, rnd, throwcount, message) {
+socket.on('highlightSplit', (activePlayer, rnd, throwcount, message) => {
     highlightSplit(activePlayer, rnd, throwcount, message);
 });
 
-socket.on('redirectX01', function(url) {
+socket.on('redirectX01', (url) => {
     window.location.href = url;
 });
 
-socket.on('redirectCricket', function(url) {
+socket.on('redirectCricket', (url) => {
     window.location.href = url;
 });
 
-socket.on('redirectATC', function(url) {
+socket.on('redirectATC', (url) => {
     window.location.href = url;
 });
 
-socket.on('redirectSplit', function(url) {
+socket.on('redirectSplit', (url) => {
     window.location.href = url;
 });
 
-socket.on('drawPodiumX01', function(podium, word) {
+socket.on('drawPodiumX01', (podium, word) => {
    drawPodiumX01(podium, word);
 });
 
-socket.on('drawPodiumCricket', function(podium, word) {
+socket.on('drawPodiumCricket', (podium, word) => {
     drawPodiumCricket(podium, word);
 });
 
-socket.on('drawPodiumATC', function(podium, word) {
+socket.on('drawPodiumATC', (podium, word) => {
     drawPodiumATC(podium, word);
 });
 
-socket.on('drawPodiumSplit', function(podium, word) {
+socket.on('drawPodiumSplit', (podium, word) => {
     drawPodiumSplit(podium, word);
 });
 
