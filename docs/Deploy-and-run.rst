@@ -94,13 +94,13 @@ Systemd service file
         [Unit]
         Description=Gunicorn instance to serve Dart-O-Mat 3000
         After=network.target
-        
+
         [Service]
         User=patrick
         WorkingDirectory=/home/patrick/dart-o-mat-3000
         Environment="PATH=/home/patrick/dart-o-mat-3000/.venv/bin"
         ExecStart=/home/patrick/dart-o-mat-3000/.venv/bin/gunicorn --workers 1 --worker-class eventlet --bind 0.0.0.0:5000 run:app --reload
-        
+
         [Install]
         WantedBy=multi-user.target
 
@@ -147,9 +147,9 @@ It will have this content
 
             location /socket.io/ {
 		proxy_http_version 1.1;
-
 		proxy_set_header Upgrade $http_upgrade;
 		proxy_set_header Connection "upgrade";
+    proxy_set_header Host $host;
 
 		proxy_pass http://localhost:5000/socket.io/;
             }
@@ -202,5 +202,3 @@ Be sure to restart the **dom3000.service** afterwards issueing the command `sudo
 
 Autostart browser and index page
 --------------------------------
-
-
