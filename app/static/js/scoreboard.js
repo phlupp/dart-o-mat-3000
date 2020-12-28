@@ -1,9 +1,9 @@
-socket.on("connect", () => {
+socket.on("connect", function() {
      console.log('Websocket connected!');
      console.log(socket.id);
 });
 
-socket.on('refresh', () => {
+socket.on('refresh', function() {
     window.location.reload(1);
 });
 

@@ -1,9 +1,9 @@
-socket.on("connect", () => {
+socket.on("connect", function() {
      console.log('Websocket connected!');
      console.log(socket.id);
 });
 
-socket.on('redirectAdmin', (url) => {
+socket.on('redirectAdmin', function(url) {
     window.location.href = url;
 });
 
