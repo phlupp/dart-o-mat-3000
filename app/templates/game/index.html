@@ -24,9 +24,13 @@
 				</script>
 			</div>
 		</div>
-		<div class="col-5">
+		<div class="col-1"></div>
+		<div class="col-4">
 			<h2>{% trans %}Connect to the WLAN:{% endtrans %}
 			<div id="wlanqr" class="container qrcode">
+				<ul>
+					<li>{% trans %}Connect to the WIFI{% endtrans %}</li>
+				</ul>
 				<script type="text/javascript">
 					new QRCode(document.getElementById("wlanqr"), "{{ wlanqr }}");
 				</script>
